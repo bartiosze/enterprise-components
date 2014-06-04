@@ -10,6 +10,8 @@ binPath = <type(PATH)>
 dataPath = <type(PATH)>
 #/C/ Log files directory. Directory for standard output and standard error redirections
 logPath = <type(PATH)>
+#/C/ Shared directory path. Shared between different components (e.g. for data).
+sharedPath = <type(PATH)>
 #/C/ Base port value.
 basePort = <type(PORT)>
 #/C/ Memory cap for q process in MB (q -w command line option; see code.kx.com for more details).
