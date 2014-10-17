@@ -1,0 +1,42 @@
+" Path is automatically expanded to include QHOME content
+set path=.,$EC_SYS_PATH/bin/ec/*
+
+" Configuration below is inspired by: http://nvie.com/posts/how-i-boosted-my-vim/
+set nocompatible
+set hidden        " hide buffers instead of closing them
+set nowrap        " don't wrap lines
+set tabstop=4     " a tab is four spaces
+set shiftwidth=4  " number of spaces to use for autoindenting
+set smarttab      " insert tabs on the start of a line according to
+                  " shiftwidth, not tabstop
+set backspace=indent,eol,start
+                  " allow backspacing over everything in insert mode
+set autoindent    " always set autoindenting on
+set copyindent    " copy the previous indentation on autoindenting
+set number        " always show line numbers
+set shiftround    " use multiple of shiftwidth when indenting with '<' and '>'
+set showmatch     " set show matching parenthesis
+set ignorecase    " ignore case when searching
+set smartcase     " ignore case if search pattern is lowercase, case-sensitive otherwise
+set hlsearch      " highlight search terms
+set incsearch     " show search matches as you type
+set history=1000         " remember more commands and search history
+set undolevels=1000      " use many muchos levels of undo
+set wildignore=*.swp,*.bak,*.pyc,*.class
+set title                " change the terminal's title
+set visualbell           " don't beep
+set noerrorbells         " don't beep
+set wildmenu wildmode=full
+set cursorline
+set showcmd
+set laststatus=2
+set splitright splitbelow
+
+" highlight spaces and tabs in a more convenint way
+set list listchars=tab:>.,trail:.,extends:#,nbsp:.
+
+au FileType q setlocal et sw=2 ts=2 sts=2 cino+=}2
+" This one is pretty cool. I like comments but I don't like them to get in the
+" way of code. zM - close all folds (comments). zR - open all folds
+au Filetype q set foldmethod=expr |
+            \ set foldexpr=getline(v:lnum)=~'^\\s*/'
