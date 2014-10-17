@@ -84,6 +84,7 @@
 
 /F/ Load q modules requested from command line
 .sl.libCmd:{[]
+  if[`commonLibs in key p:.Q.opt[.z.x];.sl.lib each `$p[`commonLibs]];
   if[`libs in key p:.Q.opt[.z.x];.sl.lib each `$p[`libs]];
   if[`lib in key .Q.opt[.z.x];.log.warn[`sl] "obsoleted parameter -lib will be ignored, use -libs instead"];
   };
@@ -256,7 +257,7 @@
 /F/ Initializes the log functionality. This overrides the values used for bootstrapping
 .sl.p.initLog:{
   .sl.setConfVar[`.log.maxHistSize;`EC_LOG_MAXHIST;10000;{`long$parse x}];
-  .sl.setConfVar[`.log.path;`EC_LOG_PATH;`:./log;{x[where x="\\"]="/";`$x}]; // replace \ by / because Windows
+  .sl.setConfVar[`.log.path;`EC_LOG_PATH;`:./log;{x[where x="\\"]:"/";`$x}]; // replace \ by / because Windows
   .sl.setConfVar[`.log.dest;`EC_LOG_DEST;enlist `CONSOLE;{`$"," vs x}];
   .sl.setConfVar[`.log.level;`EC_LOG_LEVEL;`INFO;{`$x}];
   .sl.setConfVar[`.log.time;`EC_TIMESTAMP_MODE;`.z.z;{$[x~"LOCAL";`.z.Z;`.z.z]}];
@@ -300,12 +301,13 @@
   if[`FILE in out;
     .log.p.h:hopen .log.p.path:.log.p.insertTs[.log.path;cid];
     if[(string .z.o) like "l*";
-    system "ln -f -s ",((1+count string hsym .log.path)_string .log.p.path)," ",1_(string hsym .log.path),"/init.log";
-    system "ln -f -s ",((1+count string hsym .log.path)_string .log.p.path)," ",1_(string hsym .log.path),"/current.log"
+      system "ln -f -s ",((1+count string hsym .log.path)_string .log.p.path)," ",1_(string hsym .log.path),"/init.log";
+      system "ln -f -s ",((1+count string hsym .log.path)_string .log.p.path)," ",1_(string hsym .log.path),"/current.log"
     ];
-  if[not .log.rotate~0Nt;
-    .sl.lib["qsl/timer"];
-    .tmr.runAt[.log.rotate;`.log.p.rotate;`.log.p.rotate]];
+    if[not .log.rotate~0Nt;
+      .sl.lib["qsl/timer"];
+      .tmr.runAt[.log.rotate;`.log.p.rotate;`.log.p.rotate]
+      ];
     ];
   .log.error:.log.debug:.log.warn:.log.info:{};
   .log.fatal: .log.p.out[out;`FATAL;"FATAL ";];
@@ -318,6 +320,11 @@
   if[level~`INFO;:()];
   .log.debug: .log.p.out[out;`DEBUG;"DEBUG ";];
   };
+  
+/F/ a helper function replacing forward slashes to backslashes for use on Windows
+/P/ s:STRING - string to be converted
+/R/ :STRING - s with / replaced with \
+.sl.p.winsl:{[s] s[where s="/"]:"\\";:s};
 
 /F/ Rotates logs
 .log.p.rotate:{
