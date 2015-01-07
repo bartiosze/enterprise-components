@@ -53,7 +53,7 @@
 /F/ - initialization of eod settings
 /F/ - initialization and load of on-disk splayed tables
 .stream.plug.init:{[]
-  .wdb.cfg.tables:            .cr.getCfgPivot[`THIS;`table`sysTable;`hdbConn];
+  .wdb.cfg.tables:            .cr.getCfgPivot[`THIS;`table`sysTable;`hdbConn`performSort];
   hdbConns:(exec distinct hdbConn from .wdb.cfg.tables) except `;
   .wdb.cfg.tables:.wdb.cfg.tables lj ([hdbConn:hdbConns] eodPath:.cr.getCfgField[;`group;`dataPath]each hdbConns);
   
@@ -75,7 +75,7 @@
     ];
   .wdb.cfg.dstHdbConn:conns 0;
   .wdb.cfg.dstHdbConn:exec first hdbConn from .wdb.cfg.tables;
-  system "cd ",1_string[.wdb.cfg.data],.os.slash,"tmpdb",.os.slash;
+  system .os.slash "cd ",1_string[.wdb.cfg.data],"/tmpdb/";
 
   //end of day initialization
   eodTabs:select table:tab, hdbPath:eodPath, hdbName:hdbConn, memoryClear:0b, store:1b from (select from .stream.cfg.srcTab where subType=`tickLF)lj `tab xcol .wdb.cfg.tables;
@@ -178,14 +178,13 @@
   status:(::);
   {[t]delete from .stream.cacheNames[t]} each exec tab from .stream.cfg.srcTab where subType=`tickHF;
   //disksort new partition
-  status:status,{[day;x].event.dot[`wdb;`.wdb.p.sortTab;(day;x);`error;`info`info`error;"Sorting wdb partition for table ", string x]}[day] each exec tab from .stream.cfg.srcTab where subType=`tickHF;
+  status:status,{[day;x].event.dot[`wdb;`.wdb.p.sortTab;(day;x);`error;`info`info`error;"Sorting wdb partition for table ", string x]}[day] each exec tab from .stream.cfg.srcTab where subType=`tickHF, tab in exec sectionVal from .wdb.cfg.tables where performSort;
   //switch tmp hdb to new date
   status:status,.event.at[`wdb;`.wdb.p.initWdb;day+1;`error;`info`info`error;"Creating new wdb partition dir"];
   .wdb.lastDumpTs:00:00:00.000000;
   //move the completed day to the real hdb
   args:(.wdb.cfg.dstHdb;day),/:exec tab from .stream.cfg.srcTab where subType=`tickHF;
   status:status,.event.dot[`wdb;`.wdb.p.mv;;`error;`info`info`error;"Moving data for day ",string[day]] each args;
-  //system "rm -rf ",string day;
   .os.rmdir string day;
   if[.wdb.cfg.fillMissingTabsHdb;
     status:status,.event.at[`wdb;`.store.fillMissingTabs;.wdb.cfg.dstHdb;`error;`info`info`error;"Fill missing tabs in hdb: ",string[.wdb.cfg.dstHdb]];
@@ -224,13 +223,7 @@
     ];
   dstCnt:$[dstMissing;0;count select from hsym `$dstTab];
   if[0<>dstCnt; 'dstTab, " contains already ",string[dstCnt], " rows of data"];
-  //cmd:"mv ",string[day],"/",string[tab],"/* ",dstTab;
-  //.log.debug[`wdb] cmd;
-  //system cmd;
   .os.move[string[day],"/",string[tab],"/*";dstTab];
-  //cmd:"mv ",string[day],"/",string[tab],"/.d ",dstTab;
-  //.log.debug[`wdb]cmd;
-  //system cmd;
   .os.move[string[day],"/",string[tab],"/.d";dstTab];
   };
 
