@@ -246,7 +246,7 @@ time         | sym     | price              | size
 ![Summary](summary_Lesson01.png)
 
 <!--------------------------------------------------------------------------------------------------------------------->
-[:arrow_backward:](../Installation.md) | [:arrow_forward:](../Lesson02)
+[:arrow_backward:](Installation.md) | [:arrow_forward:](tutorial/Lesson02/README.md)
 
 <sub>[Super Mono Icons](http://files.softicons.com/download/toolbar-icons/super-mono-sticker-icons-by-double-j-design/readme.txt) 
 by [Double-J Design](http://www.doublejdesign.co.uk/) / [CC BY 3.0](http://creativecommons.org/licenses/by/3.0/)</sub>
