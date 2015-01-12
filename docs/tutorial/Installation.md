@@ -1,4 +1,4 @@
-[:arrow_backward:](README.md) | [:arrow_forward:](Lesson01)
+[:arrow_backward:](README.md) | [:arrow_forward:](tutorial/Lesson01/index.md)
 <!------------- https://github.com/exxeleron/enterprise-components/tree/master/tutorial/Installation.md --------------->
 
 #                                           **Demo System Installation**
@@ -89,7 +89,7 @@ Instructions in Lessons relay on checking data or status of KDB+ processes, ther
 
 <!--------------------------------------------------------------------------------------------------------------------->
 ### Troubleshooting
-Common installation problems with solutions for [linux](Troubleshooting_linux.md).
+Common installation problems with solutions for [linux](tutorial/Troubleshooting_linux.md).
 
 
 <!--------------------------------------------------------------------------------------------------------------------->
@@ -158,7 +158,7 @@ stopped.
 
 > :heavy_exclamation_mark: Note:
 
-> Make sure that system is really stopped before deleting these directories, otherwise yak will lose its connection details resulting in error described in [Issue 4](../tutorial/Troubleshooting_linux.md#issue-4---startup-failed-address-already-in-use).
+> Make sure that system is really stopped before deleting these directories, otherwise yak will lose its connection details resulting in error described in [Issue 4](tutorial/Troubleshooting_linux.md#issue-4---startup-failed-address-already-in-use).
 
 1. Stop the system
 
