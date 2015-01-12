@@ -1,4 +1,4 @@
-[:arrow_backward:](../Installation.md) | [:arrow_forward:](../Lesson02)
+[:arrow_backward:](tutorial/Installation.md) | [:arrow_forward:](tutorial/Lesson02/index.md)
 
 <!----------------- https://github.com/exxeleron/enterprise-components/tree/master/tutorial/Lesson01 ------------------>
 
@@ -25,11 +25,11 @@ Please contact [sales(at)devnet.de](mailto:sales@devnet.de) for further informat
 <!--------------------------------------------------------------------------------------------------------------------->
 ## Prerequisites
 
-It is assumed that [Installation](Installation.md) page is read, system is deployed and working. 
+It is assumed that [Installation](tutorial/Installation.md) page is read, system is deployed and working. 
 Specifically these sections should be looked at in more detail:
-- [System installation](Installation.md#demosystem-installation)
-- [System startup](Installation.md#demosystem-startup)
-- [Switching Lessons](Installation.md#changing-demosystem-lesson)
+- [System installation](tutorial/Installation.md#demosystem-installation)
+- [System startup](tutorial/Installation.md#demosystem-startup)
+- [Switching Lessons](tutorial/Installation.md#changing-demosystem-lesson)
 
 <!--------------------------------------------------------------------------------------------------------------------->
 ## Components used
@@ -41,7 +41,8 @@ In this lesson we've used three components:
 
 Image below shows how these interact together:
 
-![Overview](tutorial/Lesson01/graph_Lesson01.png)
+<a href="http://github.com/exxeeleron/enterprise-components/tutorial/Lesson01/graph_Lesson01.png" title="Overview"><img src="http://github.com/exxeeleron/enterprise-components/tutorial/Lesson01/graph_Lesson01.png" alt="Overview"></a>
+
 
 > Hint:
 
@@ -246,7 +247,7 @@ time         | sym     | price              | size
 ![Summary](tutorial/Lesson01/summary_Lesson01.png)
 
 <!--------------------------------------------------------------------------------------------------------------------->
-[:arrow_backward:](Installation.md) | [:arrow_forward:](tutorial/Lesson02/index.md)
+[:arrow_backward:](tutorial/Installation.md) | [:arrow_forward:](tutorial/Lesson02/index.md)
 
 <sub>[Super Mono Icons](http://files.softicons.com/download/toolbar-icons/super-mono-sticker-icons-by-double-j-design/readme.txt) 
 by [Double-J Design](http://www.doublejdesign.co.uk/) / [CC BY 3.0](http://creativecommons.org/licenses/by/3.0/)</sub>
