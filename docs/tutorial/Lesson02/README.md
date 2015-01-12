@@ -1,34 +1,34 @@
 <!----------------- https://github.com/exxeleron/enterprise-components/tree/master/tutorial/Lesson02 ------------------>
-[:arrow_backward:](../Lesson01) | [:arrow_forward:](../Lesson03)
+[:arrow_backward:](tutorial/Lesson01/index.md) | [:arrow_forward:](tutorial/Lesson03/index.md)
 
 #                                      **Lesson 2 - Adding `quote` table**
 
 <!--------------------------------------------------------------------------------------------------------------------->
 ## Goal of the lesson
 
-In this lesson we would like to extend the system from [Lesson 1](../Lesson01) and add one more table for storing quotes 
+In this lesson we would like to extend the system from [Lesson 1](../Lesson01/index.md) and add one more table for storing quotes 
 (table `quote`). Additionally, we will learn how to use templates to simplify management of data flow within the system.
 
 <!--------------------------------------------------------------------------------------------------------------------->
 ## Prerequisites
 
-It is assumed that [Installation](../Installation.md) page is read, system is deployed and working. 
+It is assumed that [Installation](Installation.md) page is read, system is deployed and working. 
 Specifically these sections should be looked at in more detail:
-- [System installation](../Installation.md#demosystem-installation)
-- [System startup](../Installation.md#demosystem-startup)
-- [Switching Lessons](../Installation.md#changing-demosystem-lesson)
+- [System installation](Installation.md#demosystem-installation)
+- [System startup](Installation.md#demosystem-startup)
+- [Switching Lessons](Installation.md#changing-demosystem-lesson)
 
 <!--------------------------------------------------------------------------------------------------------------------->
 ## Components used
 
 There are no changes here, we still use three components just as in [Lesson 1](../Lesson01):
 
-![Overview](graph_Lesson02.png)
+![Overview](img/graph_Lesson02.png)
 
 <!--------------------------------------------------------------------------------------------------------------------->
 ## Resources in the system
 
-![Resources in the system](resources_Lesson02.png)
+![Resources in the system](img/resources_Lesson02.png)
 
 <!--------------------------------------------------------------------------------------------------------------------->
 ## Configuration files
