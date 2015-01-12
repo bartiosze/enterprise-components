@@ -41,7 +41,7 @@ In this lesson we've used three components:
 
 Image below shows how these interact together:
 
-<a href="http://raw.githubusercontent.com/exxeeleron/enterprise-components/develop/tutorial/Lesson01/graph_Lesson01.png" title="Overview"><img src="http://raw.githubusercontent.com/exxeeleron/enterprise-components/tutorial/Lesson01/graph_Lesson01.png" alt="Overview"></a>
+<a href="http://raw.githubusercontent.com/exxeleron/enterprise-components/develop/tutorial/Lesson01/graph_Lesson01.png" title="Overview"><img src="http://raw.githubusercontent.com/exxeleron/enterprise-components/tutorial/Lesson01/graph_Lesson01.png" alt="Overview"></a>
 
 
 > Hint:
