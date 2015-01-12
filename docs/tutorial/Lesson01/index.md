@@ -1,4 +1,4 @@
-[:arrow_backward:](tutorial/Installation.md) | [:arrow_forward:](tutorial/Lesson02/index.md)
+[:arrow_backward:](tutorial/Installation.md) | [:arrow_forward:](../Lesson02/index.md)
 
 <!----------------- https://github.com/exxeleron/enterprise-components/tree/master/tutorial/Lesson01 ------------------>
 
