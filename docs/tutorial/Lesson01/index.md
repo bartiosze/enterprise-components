@@ -41,7 +41,7 @@ In this lesson we've used three components:
 
 Image below shows how these interact together:
 
-![Overview](graph_Lesson01.png)
+![Overview](tutorial/Lesson01/graph_Lesson01.png)
 
 > Hint:
 
@@ -50,7 +50,7 @@ Image below shows how these interact together:
 <!--------------------------------------------------------------------------------------------------------------------->
 ## Resources in the system
 
-![Resources in the system](resources_Lesson01.png)
+![Resources in the system](tutorial/Lesson01/resources_Lesson01.png)
 
 <!--------------------------------------------------------------------------------------------------------------------->
 ## Configuration files
@@ -243,10 +243,10 @@ time         | sym     | price              | size
 <!--------------------------------------------------------------------------------------------------------------------->
 ## Summary
 
-![Summary](summary_Lesson01.png)
+![Summary](tutorial/Lesson01/summary_Lesson01.png)
 
 <!--------------------------------------------------------------------------------------------------------------------->
-[:arrow_backward:](Installation.md) | [:arrow_forward:](tutorial/Lesson02/README.md)
+[:arrow_backward:](Installation.md) | [:arrow_forward:](tutorial/Lesson02/index.md)
 
 <sub>[Super Mono Icons](http://files.softicons.com/download/toolbar-icons/super-mono-sticker-icons-by-double-j-design/readme.txt) 
 by [Double-J Design](http://www.doublejdesign.co.uk/) / [CC BY 3.0](http://creativecommons.org/licenses/by/3.0/)</sub>
