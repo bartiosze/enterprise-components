@@ -25,11 +25,11 @@ Please contact [sales(at)devnet.de](mailto:sales@devnet.de) for further informat
 <!--------------------------------------------------------------------------------------------------------------------->
 ## Prerequisites
 
-It is assumed that [Installation](../Installation.md) page is read, system is deployed and working. 
+It is assumed that [Installation](Installation.md) page is read, system is deployed and working. 
 Specifically these sections should be looked at in more detail:
-- [System installation](../Installation.md#demosystem-installation)
-- [System startup](../Installation.md#demosystem-startup)
-- [Switching Lessons](../Installation.md#changing-demosystem-lesson)
+- [System installation](Installation.md#demosystem-installation)
+- [System startup](Installation.md#demosystem-startup)
+- [Switching Lessons](Installation.md#changing-demosystem-lesson)
 
 <!--------------------------------------------------------------------------------------------------------------------->
 ## Components used
